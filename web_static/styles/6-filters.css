@@ -21,9 +21,8 @@
 	margin-right: 30px;
 }
 
-.locations:hover + ul {
-        display: block;
-	position: relative;
+.locations {
+        position: relative;
 	right: 70px;
         margin-right: 150px;
 	height: 100%;
@@ -31,9 +30,8 @@
 	border-right: #DDDDDD solid 1px
 }
 
-.amenities:hover + ul {
-        display: block;
-	position: relative;
+.amenities {
+        position: relative;
 	right: 165px;
 	height: 100%;
 	width: 25%;
@@ -56,7 +54,7 @@ h4 {
 
 
 ul {
-	list-style-type: none;
+        list-style-type: none;
 	background-color: #FAFAFA;
 	width: 100%;
 	border: #DDDDDD solid 1px;
