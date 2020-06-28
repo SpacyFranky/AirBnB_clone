@@ -37,4 +37,4 @@ class BaseModel:
                 d["updated_at"] = self.updated_at
             else:
                 d[key] = value
-            return d
+        return d
