@@ -7,10 +7,19 @@ from datetime import datetime
 class BaseModel:
     """BaseModel class"""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """public instance attributes"""
-        self.id = str(uuid.uuid4())
-        self.created_at = self.updated_at = datetime.now()
+        if kwargs is not None and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    f = '2017-06-14T22:31:03.285259'
+                    self.created_at = self.updated_at = datetime.strptime(
+                        f, '%Y-%m-%dT%H:%M:%S.%f')
+                if key != "__class__":
+                    self.__dict__[key] = value
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = self.updated_at = datetime.now()
 
     def __str__(self):
         """prints [<class name>] (<self.id>) <self.__dict__>"""
